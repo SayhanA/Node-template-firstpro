@@ -1,0 +1,46 @@
+:root {
+  --primary: rgb(0, 83, 0);
+  --white: white;
+  --active: yellow;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
+}
+
+header {
+  background-color: var(--primary);
+}
+
+nav {
+  padding: 25px 40px;
+}
+
+ul {
+  display: flex;
+  gap: 25px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav > ul > li > a {
+  color: var(--white);
+  font-weight: 700;
+}
+
+.active {
+  color: var(--active);
+}
+
+main {
+  padding: 30px;
+}
