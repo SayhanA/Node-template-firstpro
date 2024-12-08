@@ -1,15 +1,11 @@
+const { getAddProducts, postAddProducts } = require("../controllers/products");
+
 const router = require("express").Router();
 
-const books = [];
 
-router.get("/add-product", (req, res, next) => {
-  res.render("add-product", { docTitle: "Add Product Form" });
-});
 
-router.post("/product", (req, res, next) => {
-  const body = { ...req.body };
-  books.push(body);
-  res.redirect("/shop");
-});
+router.get("/add-product", getAddProducts);
 
-module.exports = { router, books };
+router.post("/add-product", postAddProducts);
+
+module.exports = { router };

@@ -1,32 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Discover books by A.N. Author, illustrated by P. Picture. Explore our category of books, starting at just $17.99, featuring works with up to 784 pages!"
-    />
-    <title><%= docTitle %></title>
-    <link rel="stylesheet" href="/styles/main.css" />
+<%- include('includes/head.ejs') %>
     <link rel="stylesheet" href="/styles/add-product.css" />
   </head>
   <body>
-    <header>
-      <nav>
-        <ul>
-          <li>
-            <a href="/shop">Shop</a>
-          </li>
-          <li>
-            <a href="/admin/add-product">Add Product</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <%- include('includes/nav.ejs') %>
     <main>
       <h3>Add a prouduct using this form</h3>
-      <form action="/admin/product" method="POST">
+      <form action="/admin/add-product" method="POST">
         <input
           type="text"
           name="name"
@@ -46,6 +25,4 @@
         ></textarea>
         <button type="submit">Add Product</button>
       </form>
-    </main>
-  </body>
-</html>
+    <%- include('includes/end.ejs') %>
