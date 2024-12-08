@@ -6,6 +6,7 @@ const PORT = process.env.PORT || 8000;
 
 const { router: adminRoute } = require("./routes/admin");
 const shopRoute = require("./routes/shop");
+const { error404 } = require("./controllers/error");
 
 const app = express();
 
@@ -17,9 +18,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/admin", adminRoute);
 app.use("/shop", shopRoute);
 
-app.use("/", (req, res, next) => {
-  res.render("404", { docTitle: "Page Not Found" });
-});
+app.use("/", error404);
 
 app.listen(PORT, () => {
   console.log(`Your server is running on PORT: ${PORT}`);
